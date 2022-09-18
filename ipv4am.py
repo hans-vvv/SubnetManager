@@ -1,29 +1,19 @@
-import json
-import pymongo
+import requests
 import ipaddress
 
 from typing import List, Dict
 from collections import defaultdict
-from fastapi import FastAPI
-
-app = FastAPI()
-app.mongodb_client = pymongo.MongoClient("localhost", 27017)
-app.database = app.mongodb_client["ipv4subnetpools"]
 
 
 class IPv4SubnetManager:
     
 
-    def __init__(self) -> None:        
-        pass
-
-
     def _read_collection(self) -> None:
 
-        self._pools = list(app.database["pools"].find(limit=1000))
+        self._pools = requests.get("http://127.0.0.1:8000/pools").json()
         
         # create lookup objects by iteration through all pools
-        self._free_subnets = defaultdict(lambda: defaultdict(list)) # prefixlen, poolname -> name of free subnet
+        self._free_subnets = defaultdict(lambda: defaultdict(list)) # prefixlen, poolname -> [name of free subnet]
         self._poolnames = []
                 
         for pool in self._pools:

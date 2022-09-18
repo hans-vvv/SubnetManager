@@ -1,3 +1,4 @@
+import requests
 from fastapi import APIRouter, Body, Request, Response, HTTPException, status
 from fastapi.encoders import jsonable_encoder
 from ipv4am import IPv4SubnetManager
@@ -12,8 +13,7 @@ ism = IPv4SubnetManager()
 
 @router.get("/pools", response_description="List all pools")
 def read_pools(request: Request) -> List[PoolModel]:
-    pools = list(request.app.database["pools"].find(limit=100))
-    return pools
+    return list(request.app.database["pools"].find(limit=100))
 
 @router.post("/pools", response_description="Add new pool", response_model=PoolModel)
 def create_pool(request: Request, pool: PoolModel = Body(...)):
