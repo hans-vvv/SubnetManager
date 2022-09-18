@@ -3,8 +3,7 @@ These demo scripts enable IPv4 subnet reservations from one or more IPv4 resourc
 
 Install with pip:
 
-pip install fastapi "uvicorn[standard]"
-pip install pymongo
+pip install fastapi "uvicorn[standard]" pymongo
 
 Start webserver via console with:
 uvicorn main:app --reload
