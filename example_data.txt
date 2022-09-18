@@ -1,0 +1,169 @@
+[
+    {
+        "name": "10.5.0.0/24",
+        "description": "test",
+        "prefixlen": 29,
+        "subnets": [
+            {
+                "name": "10.5.0.0/29",
+                "status": "reserved",
+                "cid": "klant-1"
+            },
+            {
+                "name": "10.5.0.8/29",
+                "status": "reserved",
+                "cid": "klant-2"
+            },
+            {
+                "name": "10.5.0.16/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.24/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.32/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.40/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.48/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.56/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.64/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.72/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.80/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.88/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.96/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.104/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.112/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.120/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.128/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.136/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.144/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.152/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.160/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.168/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.176/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.184/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.192/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.200/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.208/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.216/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.224/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.232/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.240/29",
+                "status": "free",
+                "cid": null
+            },
+            {
+                "name": "10.5.0.248/29",
+                "status": "free",
+                "cid": null
+            }
+        ]
+    }
+]
