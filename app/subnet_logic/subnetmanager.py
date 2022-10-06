@@ -1,5 +1,3 @@
-import os
-import sys
 import ipaddress
 from typing import List, Dict, Tuple
 
@@ -9,15 +7,7 @@ import app.crud
 from app.db.models import SubnetPool
 from app.schemas.schemas import SubnetPoolCreateBase
 
-# include folder where main.py resides in module search path and import main
-from app.core.config import ROOT
-curr_dir = os.getcwd()
-os.chdir(ROOT)
-# go up one directory higher (cd ..)
-main_dir = os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.append(main_dir)
-os.chdir(curr_dir)
-import main
+from sqlalchemy.orm import Session
 
 
 class IPv4SubnetManager:
@@ -36,10 +26,10 @@ class IPv4SubnetManager:
             return False, detail
         return True, ''        
  
-    def create_free_subnets(self, subnetpool: SubnetPool
+    def create_free_subnets(self, db: Session, subnetpool: SubnetPool
     ) -> List[Dict]:
 
-        subnetpool_id = main.db.query(subnetpool.id).first()[0]
+        subnetpool_id = db.query(subnetpool.id).first()[0]
         subnetpool_dict = jsonable_encoder(subnetpool)
         subnetpoolname = subnetpool_dict['prefixname']
         prefixlen_subnets = subnetpool_dict['prefixlen_subnets']
@@ -54,7 +44,7 @@ class IPv4SubnetManager:
                         for subnet_name in subnet_names]
         # Create objects in db
         for free_subnet in free_subnets:
-            app.crud.subnet.create(main.db, obj_in=free_subnet)
+            app.crud.subnet.create(db, obj_in=free_subnet)
         return free_subnets           
  
  

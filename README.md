@@ -18,7 +18,7 @@ Then you could add a new pool of subnets using the appropriate POST method. For 
 The free subnets are returned by the app and can be viewed using the available GET methods.
 
 
-The entered data is validated using the Python pydantic library at runtime. I also implemented a method in the IPv4SubnetManager class. The purpose of this class is to implement more complex logic which may be covererd completely by Pydantic. You could for example verify if a new subnetpool overlaps with the current available pools in the subnetpool_constraints method.
+The entered data is validated using the Python pydantic library at runtime. I also implemented a method in the IPv4SubnetManager class. The purpose of this class is to implement more complex logic which may not be covererd completely by Pydantic. You could for example verify if a new subnetpool overlaps with the current available pools in the subnetpool_constraints method.
 
 
 I used this great resource https://github.com/ChristopherGS/ultimate-fastapi-tutorial to implement certain features. The design patterns to implement database CRUD operations is worth exploring in detail.

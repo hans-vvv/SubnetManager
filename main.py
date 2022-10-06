@@ -67,7 +67,7 @@ def create_subnetpool(obj_in: SubnetPoolCreateBase):
         )
     try:
         created_subnetpool = crud.subnetpool.create(db, obj_in=obj_in)        
-        return subnet_logic.ipv4subnetmanager.create_free_subnets(created_subnetpool)
+        return subnet_logic.ipv4subnetmanager.create_free_subnets(db, created_subnetpool)
     except IntegrityError:
         raise HTTPException(
             status_code=403, detail="Something went wrong when adding this pool in the db."
