@@ -17,13 +17,13 @@ class IPv4SubnetManager:
 
         obj_in_data = jsonable_encoder(obj_in)
         subnetpoolname = obj_in_data['prefixname']
-        prefixlen_subnets = obj_in_data['prefixlen_subnets']
 
         try:
-            pool_network = ipaddress.ip_network(subnetpoolname)
+            _ = ipaddress.ip_network(subnetpoolname)
         except ValueError:
             detail = 'Invalid IPv4 network'
             return False, detail
+
         return True, ''        
  
     def create_free_subnets(self, db: Session, subnetpool: SubnetPool
